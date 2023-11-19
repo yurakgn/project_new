@@ -40,12 +40,15 @@ INSTALLED_APPS = [
 
     'django_filters',
     'social_django',
+    'debug_toolbar',
 
     'movies',
     'store',
+    'actions',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,7 +91,7 @@ DATABASES = {
         'USER': 'projectnew_user',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -151,3 +154,7 @@ SOCIAL_AUTH_JSONFIELD_ENABLED = True
 
 SOCIAL_AUTH_GITHUB_KEY = 'af654665dc346821750c'
 SOCIAL_AUTH_GITHUB_SECRET = '4c08834d8e7c7ee67272ca9280bb2f8fa1136847'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
